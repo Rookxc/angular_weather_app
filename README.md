@@ -1,10 +1,14 @@
 # angular_weather_app
-Simple and easy weather app
+**Very** Simple and easy weather app for location Maribor.
+
+Night time weather app
+![image](https://github.com/Rookxc/angular_weather_app/assets/45943664/a19712aa-590c-4e72-beca-e4dcc3f584af)
+
+Day time weather app
+![image](https://github.com/Rookxc/angular_weather_app/assets/45943664/7226fd73-99be-49f5-b83e-43f4c04b543c)
 
 
-#Night time design:
-![image](https://github.com/Rookxc/angular_weather_app/assets/45943664/391581d2-f576-4e28-9ac2-e315a027f5d6)
-#Day time design:
-![image](https://github.com/Rookxc/angular_weather_app/assets/45943664/abf271f9-830e-402a-b9fd-fe7b5faf610a)
 
-
+# Improvements ideas (TODO)
+* Being able to select City
+* Background changes depending on time of the day and current weather (if rainy and day -> change background to rainy day)
