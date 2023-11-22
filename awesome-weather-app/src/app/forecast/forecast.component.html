@@ -1,1 +1,17 @@
-<p>forecast works!</p>
+<div>
+  <h2>5-Day Weather Forecast</h2>
+  <table *ngIf="weatherForecast">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Temperature (2m)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of weatherForecast.time; let i = index">
+        <td>{{ data | date : "short" }}</td>
+        <td>{{ weatherForecast.temperature2m[i] }}°C</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

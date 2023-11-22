@@ -1,13 +1,21 @@
 <style></style>
 
-<main class="main">
-  <div class="container d-flex justify-content-center align-items-center">
-    <div class="row">
-      <div class="col">
-        <app-current-weather></app-current-weather>
-      </div>
-      <div class="col">
-        <!-- <app-forecast></app-forecast> -->
+<main
+  [style.height]="'100vh'"
+  [style.backgroundColor]="isDaytime() ? 'white' : 'black'"
+>
+  <div
+    class="main"
+    [ngClass]="{ 'upper-section': true, day: isDaytime(), night: !isDaytime() }"
+  >
+    <div class="upper-section">
+      <div class="container d-flex justify-content-center align-items-center">
+        <div class="row">
+          <div class="col">
+            <app-current-weather class="current-weather"></app-current-weather>
+            <!-- <app-forecast></app-forecast> -->
+          </div>
+        </div>
       </div>
     </div>
   </div>

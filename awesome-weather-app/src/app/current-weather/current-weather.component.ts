@@ -24,4 +24,21 @@ export class CurrentWeatherComponent implements OnInit {
       this.currentWeatherData = data;
     });
   }
+
+  getBackgroundColor(weatherCode: number): string {
+    // Implement your logic to map weather codes to background colors
+    switch (weatherCode) {
+      case 0:
+        return 'blue'; // Example color for clear sky
+      case 1:
+        return 'blue'; // Example color for clear sky
+      case 2:
+        return 'gray'; // Example color for clear sky
+      case 3:
+        return 'gray'; // Example color for mainly clear, partly cloudy, and overcast
+      // Add more cases for other weather codes
+      default:
+        return 'white'; // Default color
+    }
+  }
 }

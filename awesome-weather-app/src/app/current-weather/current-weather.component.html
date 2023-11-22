@@ -1,10 +1,14 @@
-<div>
-  Current weather component
-  <!-- <div *ngIf="currentWeatherData"> -->
+<!-- <div
+  [ngStyle]="{
+    'background-color': getBackgroundColor(110)
+  }"
+> -->
+<!-- <p>weather_code: {{ currentWeatherData.weather_code }}</p> -->
+<div class="main">
   <div *ngIf="currentWeatherData">
-    <h2>Current Weather</h2>
-    <p>Date: {{ currentWeatherData.date }}</p>
-    <p>Temperature: {{ currentWeatherData.temperature }}°C</p>
-    <p>Wind Speed: {{ currentWeatherData.windSpeed }} m/s</p>
+    <h2>Maribor</h2>
+    <p>{{ currentWeatherData.date }}</p>
+    <p class="temperature">{{ currentWeatherData.temperature }}°C</p>
+    <p>{{ currentWeatherData.windSpeed }} m/s</p>
   </div>
 </div>

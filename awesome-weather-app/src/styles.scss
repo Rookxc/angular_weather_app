@@ -2,4 +2,60 @@
 
 .main {
   height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.current-weather {
+  color: white;
+}
+
+.upper-section {
+  position: relative;
+  height: 650px;
+  text-align: center;
+}
+
+.day {
+  background: url("./assets/clear2sky.jpg") center/cover no-repeat;
+
+  &::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+}
+
+.night {
+  background: url("./assets/clearNightSky.jpg") center/cover no-repeat;
+
+  &::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(0, 0, 0) 100%
+    );
+  }
+}
+
+.upper-section::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  // background: linear-gradient(
+  //   to bottom,
+  //   rgba(255, 255, 255, 0) 0%,
+  //   rgba(255, 255, 255, 1) 100%
+  // );
+  // background: linear-gradient(
+  //   to bottom,
+  //   rgba(255, 255, 255, 0) 0%,
+  //   rgb(0, 0, 0) 100%
+  // );
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
