@@ -1,4 +1,4 @@
-# angular_weather_app
+# Super awesome weather app ⚡
 **Very** Simple and easy weather app for location Maribor.
 
 Night time weather app
@@ -12,3 +12,4 @@ Day time weather app
 # Improvements ideas (TODO)
 * Being able to select City
 * Background changes depending on time of the day and current weather (if rainy and day -> change background to rainy day)
+* Add unit tests
