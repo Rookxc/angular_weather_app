@@ -2,10 +2,10 @@
 **Very** Simple and easy weather app for location Maribor.
 
 Night time weather app
-![image](https://github.com/Rookxc/angular_weather_app/assets/45943664/a19712aa-590c-4e72-beca-e4dcc3f584af)
+![image](http://magicmockups.com/media/screen/guest/74/b4db1a8b5be14f4eae10af32d0c10cd1_25_1920.jpg)
 
 Day time weather app
-![image](https://github.com/Rookxc/angular_weather_app/assets/45943664/7226fd73-99be-49f5-b83e-43f4c04b543c)
+![image](http://magicmockups.com/media/screen/guest/75/c413cc6964344753937e308c2afcbf2c_30_1920.jpg)
 
 
 
