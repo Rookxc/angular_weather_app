@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { fetchWeatherApi } from 'openmeteo';
-import moment from 'moment-timezone';
 
 @Injectable({
   providedIn: 'root',
@@ -23,10 +22,6 @@ export class WeatherService {
       fetchWeatherApi(this.apiUrl, params)
         .then((responses) => {
           const response = responses[0];
-
-          const utcOffsetSeconds = response.utcOffsetSeconds();
-          const currentTime = moment().utcOffset(utcOffsetSeconds);
-          console.log('CR:', currentTime);
           const current = response.current()!;
 
           const weatherData = {
@@ -36,7 +31,6 @@ export class WeatherService {
               year: 'numeric',
               month: '2-digit',
               day: '2-digit',
-              hour: '2-digit',
             }),
             temperature: Math.round(current.variables(0)!.value()),
             windSpeed: current.variables(1)!.value().toFixed(1),
@@ -62,7 +56,7 @@ export class WeatherService {
       //TODO Option to change
       latitude: 46.55,
       longitude: 15.64,
-      forecast_days: 5,
+      forecast_days: 6,
       hourly: 'temperature_2m',
     };
 
@@ -80,7 +74,28 @@ export class WeatherService {
             ).map((t) => new Date((t + utcOffsetSeconds) * 1000)),
             temperature2m: hourly.variables(0)!.valuesArray()!,
           };
-          observer.next(weatherData);
+
+          // Add max and min temperatures for each day
+          const dailyData = [];
+          const days = 6; // Number of forecast days
+          for (let i = 0; i < days; i++) {
+            const startIndex = i * 24;
+            const endIndex = (i + 1) * 24;
+            const temperaturesForDay = weatherData.temperature2m.slice(
+              startIndex,
+              endIndex
+            );
+            const maxTemperature = Math.round(Math.max(...temperaturesForDay));
+            const minTemperature = Math.round(Math.min(...temperaturesForDay));
+
+            dailyData.push({
+              date: weatherData.time[startIndex],
+              maxTemperature,
+              minTemperature,
+            });
+          }
+          console.log(dailyData);
+          observer.next(dailyData);
           observer.complete();
         })
         .catch((error) => {

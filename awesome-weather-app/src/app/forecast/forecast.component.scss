@@ -1,0 +1,36 @@
+.forecast-container {
+  margin-top: 70px;
+}
+
+// Sample styles, customize as needed
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.temperature {
+  font-size: 20px;
+  color: #333;
+}
+
+.date {
+  font-size: 16px;
+  color: #555;
+}
+
+// Add more styles based on your design preferences
+.card-title {
+  font-size: 35px;
+}
